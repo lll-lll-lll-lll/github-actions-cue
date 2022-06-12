@@ -2,7 +2,6 @@ package python
 
 // # What
 // pythonのgithub actionsの環境構築を簡潔にするため
-// 
 name: "Base Workflow"
 on: {
 	workflow_call:
