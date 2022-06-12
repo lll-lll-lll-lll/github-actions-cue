@@ -1,8 +1,8 @@
 package azure
 
-#Name: string | *"Azure Function To Deploy"
+import "github.com/cue_template/schemas/azureSchema"
 
-name: #Name
+name: azureSchema.#WorkfowName
 
 on: {
 	workflow_dispatch: inputs: ref:
@@ -18,8 +18,8 @@ on: {
 
 env: {
 	AZURE_FUNCTIONAPP_PACKAGE_PATH: "."
-	AZURE_FUNCTIONAPP_NAME:         #AzureFuncName & "sample-python-githubactions"
-	PYTHON_VERSION:                 #PythonVersion & "3.9"
+	AZURE_FUNCTIONAPP_NAME:         azureSchema.#AzureFuncName & "sample-python-githubactions"
+	PYTHON_VERSION:                 azureSchema.#PythonVersion & "3.9"
 }
 
 jobs: {
